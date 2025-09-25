@@ -7,7 +7,9 @@
     <meta name="description" content="Online furniture shop offering sofas, chairs, and tables.">
     <meta name="author" content="ITI">
     <title>InstaBuy</title>
-    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalize.css">
 </head>
@@ -47,7 +49,7 @@
             <div class="logo">
                 InstaBuy
             </div>
-            <ul>
+            <ul id="nav-links">
                 <li>
                     <a href="#" class="active">Home</a>
                 </li>
@@ -58,16 +60,17 @@
                     <a href="#">Favorite</a>
                 </li>
                 <li>
-                    <a href="#">Favorite</a>
+                    <a href="#">About</a>
                 </li>
                 <li>
-                    <a href="#">Favorite</a>
+                    <a href="#">Contact</a>
                 </li>
             </ul>
             <form action="#" class="search-input">
                 <input type="text">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </form>
+            <i class="fas fa-bars menu-icon" id="menu-icon"></i>
         </div>
     </header>
 
@@ -140,6 +143,99 @@
                 </div>
             </div>
         </div>
+    </section>
+
+     <section class="categories">
+        <div class="container">
+            <h2>Categories</h2>
+            <div class="cards-container">
+                <a class="rounded-card">
+                    <div class="image-container">
+                        <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/25be42f9-5e06-43c7-bd7b-55ca2b019983.jpeg"
+                            alt="sofa">
+                    </div>
+                    <div class="category-content">
+                        <h3>sofa</h3>
+
+                    </div>
+                </a>
+
+                <a class="rounded-card">
+                    <div class="image-container">
+                        <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/10f4256f-14e1-44ce-96e1-988d7b7fd08e.jpeg"
+                            alt="chair">
+                    </div>
+                    <div class="category-content">
+                        <h3>chair</h3>
+
+                    </div>
+                </a>
+
+                <a class="rounded-card">
+                    <div class="image-container">
+                        <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/37361617-6fbd-4dc4-80a3-af801da59c48.jpeg"
+                            alt="stool">
+                    </div>
+                    <div class="category-content">
+                        <h3>stool</h3>
+
+                    </div>
+                </a>
+
+                <a class="rounded-card">
+                    <div class="image-container">
+                        <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/a0fef812-c73a-46ed-ba9b-d2fcec1e32eb.jpeg"
+                            alt="table">
+                    </div>
+                    <div class="category-content">
+                        <h3>table</h3>
+
+                    </div>
+                </a>
+
+                <a class="rounded-card">
+                    <div class="image-container">
+                        <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/5351cfe9-90e7-4379-9a61-a48069b12f01.jpeg"
+                            alt="desk">
+                    </div>
+                    <div class="category-content">
+                        <h3>desk</h3>
+
+                    </div>
+                </a>
+
+                <a class="rounded-card">
+                    <div class="image-container">
+                        <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/3559a19f-aa51-4efb-a024-a55bc20aa5ba.jpeg"
+                            alt="kitchen">
+                    </div>
+                    <div class="category-content">
+                        <h3>kitchen</h3>
+                    </div>
+                </a>
+
+                <a class="rounded-card">
+                    <div class="image-container">
+                        <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/87280141-a60b-4b76-ab54-a2e4f6781752.jpeg"
+                            alt="vanitory">
+                    </div>
+                    <div class="category-content">
+                        <h3>vanitory</h3>
+
+                    </div>
+                </a>
+
+                <a class="rounded-card">
+                    <div class="image-container">
+                        <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/a77e3e2b-f36c-40a8-81c4-8e47c75de141.jpeg"
+                            alt="matress">
+                    </div>
+                    <div class="category-content">
+                        <h3>matress</h3>
+
+                    </div>
+                </a>
+            </div>
     </section>
 
     <section class="newest-products">
@@ -263,135 +359,43 @@
             </div>
     </section>
 
-    <section class="categories">
-        <div class="container">
-            <h2>Categories</h2>
-            <div class="cards-container">
-                <a class="rounded-card">
-                    <div class="image-container">
-                        <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/25be42f9-5e06-43c7-bd7b-55ca2b019983.jpeg"
-                            alt="sofa">
-                    </div>
-                    <div class="category-content">
-                        <h3>sofa</h3>
-
-                    </div>
-                </a>
-
-                <a class="rounded-card">
-                    <div class="image-container">
-                        <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/10f4256f-14e1-44ce-96e1-988d7b7fd08e.jpeg"
-                            alt="chair">
-                    </div>
-                    <div class="category-content">
-                        <h3>chair</h3>
-
-                    </div>
-                </a>
-
-                <a class="rounded-card">
-                    <div class="image-container">
-                        <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/37361617-6fbd-4dc4-80a3-af801da59c48.jpeg"
-                            alt="stool">
-                    </div>
-                    <div class="category-content">
-                        <h3>stool</h3>
-
-                    </div>
-                </a>
-
-                <a class="rounded-card">
-                    <div class="image-container">
-                        <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/a0fef812-c73a-46ed-ba9b-d2fcec1e32eb.jpeg"
-                            alt="table">
-                    </div>
-                    <div class="category-content">
-                        <h3>table</h3>
-
-                    </div>
-                </a>
-
-                <a class="rounded-card">
-                    <div class="image-container">
-                        <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/5351cfe9-90e7-4379-9a61-a48069b12f01.jpeg"
-                            alt="desk">
-                    </div>
-                    <div class="category-content">
-                        <h3>desk</h3>
-
-                    </div>
-                </a>
-
-                <a class="rounded-card">
-                    <div class="image-container">
-                        <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/3559a19f-aa51-4efb-a024-a55bc20aa5ba.jpeg"
-                            alt="kitchen">
-                    </div>
-                    <div class="category-content">
-                        <h3>kitchen</h3>
-                    </div>
-                </a>
-
-                <a class="rounded-card">
-                    <div class="image-container">
-                        <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/87280141-a60b-4b76-ab54-a2e4f6781752.jpeg"
-                            alt="vanitory">
-                    </div>
-                    <div class="category-content">
-                        <h3>vanitory</h3>
-
-                    </div>
-                </a>
-
-                <a class="rounded-card">
-                    <div class="image-container">
-                        <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/a77e3e2b-f36c-40a8-81c4-8e47c75de141.jpeg"
-                            alt="matress">
-                    </div>
-                    <div class="category-content">
-                        <h3>matress</h3>
-
-                    </div>
-                </a>
-            </div>
-    </section>
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="left-cont">
-                    <h2 class="logo">InstaBuy</h2>
-                    <div class="contacts">
-                        <form action="#" class="search-input">
-                            <input type="text" placeholder="Enter your Email">
-                            <button>SignUp</button>
-                        </form>
-                        <h3>Contact Info</h3>
-                        <p class="address">
-                            17 Princess Road, London, Greater London NW1 8JR, UK
-                        </p>
-                    </div>
-                </div>
-                <div class="categories-list">
-                    <h3>Categories</h3>
-                    <ul> <a href="">Sofa</a>
-                        <a href="">Sofa</a>
-                        <a href="">Sofa</a>
-                        <a href="">Sofa</a>
-                        <a href="">Sofa</a>
-                    </ul>
-                </div>
-                <div class="pages">
-                    <h3>Pages</h3>
-                    <ul>
-                        <a href="#">Home</a>
-                        <a href="#">Home</a>
-                        <a href="#">Home</a>
-                        <a href="#">Home</a>
-                    </ul>
-
+        <div class="footer-content">
+            <div class="left-cont">
+                <h2 class="logo">InstaBuy</h2>
+                <div class="contacts">
+                    <form action="#" class="search-input">
+                        <input type="text" placeholder="Enter your Email">
+                        <button>SignUp</button>
+                    </form>
+                    <h3>Contact Info</h3>
+                    <p class="address">
+                        17 Princess Road, London, Greater London NW1 8JR, UK
+                    </p>
                 </div>
             </div>
+            <div class="categories-list">
+                <h3>Categories</h3>
+                <ul> <a href="">Sofa</a>
+                    <a href="">chair</a>
+                    <a href="">stool</a>
+                    <a href="">Table</a>
+                    <a href="">Desk</a>
+                    <a href="">Kitchen</a>
+                    <a href="">Vanitory</a>
+                    <a href="">Matress</a>
+                </ul>
+            </div>
+            <div class="pages">
+                <h3>Pages</h3>
+                <ul>
+                    <a href="#">Home</a>
+                    <a href="#">Products</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </ul>
 
+            </div>
         </div>
         <div class="footer-bar">
             <div class="copy-word">
@@ -405,6 +409,7 @@
             </div>
         </div>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
