@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main-styling.css">
+    <link rel="stylesheet" href="css/products.css">
+</head>
+
+<body>
+    <header>
+        <div class="top-header">
+            <div class="heading-bar">
+                <div class="contact-info">
+                    <span>
+                        <i class="fa-regular fa-envelope"></i>
+                        <a href="mailto:magdyabdo484@gmail.com">magdyabdo484@gmail.com</a>
+                    </span>
+                    <span>
+                        <i class="fas fa-phone"></i>
+                        +(12345)67890
+                    </span>
+                </div>
+                <div>
+                    <span>
+                        <a href="#">login</a>
+                        <i class="fa-regular fa-user"></i>
+                    </span>
+                    <span>
+                        <a href="#">wishlist</a>
+                        <i class="fa-regular fa-heart"></i>
+                    </span>
+                    <span>
+                        <a href="#">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="nav">
+            <div class="logo">
+                InstaBuy
+            </div>
+            <ul id="nav-links">
+                <li>
+                    <a href="index.html" class="active">Home</a>
+                </li>
+                <li>
+                    <a href="products.html">products</a>
+                </li>
+                <li>
+                    <a href="favorites.html">Favorite</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+            <form action="/products.html" class="search-input">
+                <input type="text" id="search-input" name="name">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </form>
+            <i class="fas fa-bars menu-icon" id="menu-icon"></i>
+        </div>
+    </header>
+
+    <section class="products">
+        <div class="container">
+            <h2>Products</h2>
+            <div class="cards" id="products">
+            </div>
+            <button type="button" class="load-more-btn" id="load-more">Load More</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="left-cont">
+                <h2 class="logo">InstaBuy</h2>
+                <div class="contacts">
+                    <form action="#" class="search-input">
+                        <input type="text" placeholder="Enter your Email">
+                        <button>SignUp</button>
+                    </form>
+                    <h3>Contact Info</h3>
+                    <p class="address">
+                        17 Princess Road, London, Greater London NW1 8JR, UK
+                    </p>
+                </div>
+            </div>
+            <div class="categories-list">
+                <h3>Categories</h3>
+                <ul> <a href="">Sofa</a>
+                    <a href="">chair</a>
+                    <a href="">stool</a>
+                    <a href="">Table</a>
+                    <a href="">Desk</a>
+                    <a href="">Kitchen</a>
+                    <a href="">Vanitory</a>
+                    <a href="">Matress</a>
+                </ul>
+            </div>
+            <div class="pages">
+                <h3>Pages</h3>
+                <ul>
+                    <a href="#">Home</a>
+                    <a href="#">Products</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </ul>
+
+            </div>
+        </div>
+        <div class="footer-bar">
+            <div class="copy-word">
+                ©Webecy - All Rights Reserved
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script type="module" src="js/products.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

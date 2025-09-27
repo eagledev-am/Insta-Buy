@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main-styling.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -51,13 +52,13 @@
             </div>
             <ul id="nav-links">
                 <li>
-                    <a href="#" class="active">Home</a>
+                    <a href="/index.html" class="active">Home</a>
                 </li>
                 <li>
-                    <a href="#">products</a>
+                    <a href="products.html">products</a>
                 </li>
                 <li>
-                    <a href="#">Favorite</a>
+                    <a href="favorites.html">Favorite</a>
                 </li>
                 <li>
                     <a href="#">About</a>
@@ -66,8 +67,8 @@
                     <a href="#">Contact</a>
                 </li>
             </ul>
-            <form action="#" class="search-input">
-                <input type="text">
+            <form action="/products.html" class="search-input" method="get" id="search-form">
+                <input type="text" id="search-input" name="name">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </form>
             <i class="fas fa-bars menu-icon" id="menu-icon"></i>
@@ -93,74 +94,26 @@
     <section class="featured-section">
         <div class="container">
             <h2>Featured Products</h2>
-            <div class="cards">
-                <div class="card">
-                    <div class="image-container">
-                        <img src="assets/1ade62f06db0a7630b347e6423288fc09447f1a8.png" alt="Product" class="card-img">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Modern Sofa</h3>
-                        <p class="card-subtitle">Category: Furniture</p>
-                        <p class="card-text">A stylish and comfortable sofa for your living room.</p>
-
-                        <div class="card-footer">
-                            <span class="price">$499</span>
-                            <button class="btn">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="image-container">
-                        <img src="assets/db5fe91e81f40d5069977639c120b46b02efd85d.png" alt="Product" class="card-img">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Modern Sofa</h3>
-                        <p class="card-subtitle">Category: Furniture</p>
-                        <p class="card-text">A stylish and comfortable sofa for your living room.</p>
-
-                        <div class="card-footer">
-                            <span class="price">$499</span>
-                            <button class="btn">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="image-container">
-                        <img src="assets/fe502c91678776be52471704ed6aa26cd1d28dd8.png" alt="Product" class="card-img">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Modern Sofa</h3>
-                        <p class="card-subtitle">Category: Furniture</p>
-                        <p class="card-text">A stylish and comfortable sofa for your living room.</p>
-
-                        <div class="card-footer">
-                            <span class="price">$499</span>
-                            <button class="btn">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="cards" id="featured-products">
             </div>
         </div>
     </section>
 
-     <section class="categories">
+    <section class="categories">
         <div class="container">
             <h2>Categories</h2>
             <div class="cards-container">
-                <a class="rounded-card">
+                <a class="rounded-card" href="products.html?name=sofa">
                     <div class="image-container">
                         <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/25be42f9-5e06-43c7-bd7b-55ca2b019983.jpeg"
                             alt="sofa">
                     </div>
                     <div class="category-content">
                         <h3>sofa</h3>
-
                     </div>
                 </a>
 
-                <a class="rounded-card">
+                <a class="rounded-card" href="products.html?name=chair">
                     <div class="image-container">
                         <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/10f4256f-14e1-44ce-96e1-988d7b7fd08e.jpeg"
                             alt="chair">
@@ -171,7 +124,7 @@
                     </div>
                 </a>
 
-                <a class="rounded-card">
+                <a class="rounded-card" href="products.html?name=stool">
                     <div class="image-container">
                         <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/37361617-6fbd-4dc4-80a3-af801da59c48.jpeg"
                             alt="stool">
@@ -182,7 +135,7 @@
                     </div>
                 </a>
 
-                <a class="rounded-card">
+                <a class="rounded-card" href="products.html?name=table">
                     <div class="image-container">
                         <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/a0fef812-c73a-46ed-ba9b-d2fcec1e32eb.jpeg"
                             alt="table">
@@ -193,7 +146,7 @@
                     </div>
                 </a>
 
-                <a class="rounded-card">
+                <a class="rounded-card" href="products.html?name=desk">
                     <div class="image-container">
                         <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/5351cfe9-90e7-4379-9a61-a48069b12f01.jpeg"
                             alt="desk">
@@ -204,7 +157,7 @@
                     </div>
                 </a>
 
-                <a class="rounded-card">
+                <a class="rounded-card" href="products.html?name=kitchen">
                     <div class="image-container">
                         <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/3559a19f-aa51-4efb-a024-a55bc20aa5ba.jpeg"
                             alt="kitchen">
@@ -214,7 +167,7 @@
                     </div>
                 </a>
 
-                <a class="rounded-card">
+                <a class="rounded-card" href="products.html?name=vanitory">
                     <div class="image-container">
                         <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/87280141-a60b-4b76-ab54-a2e4f6781752.jpeg"
                             alt="vanitory">
@@ -225,14 +178,13 @@
                     </div>
                 </a>
 
-                <a class="rounded-card">
+                <a class="rounded-card" href="products.html?name=matress">
                     <div class="image-container">
                         <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/a77e3e2b-f36c-40a8-81c4-8e47c75de141.jpeg"
                             alt="matress">
                     </div>
                     <div class="category-content">
                         <h3>matress</h3>
-
                     </div>
                 </a>
             </div>
@@ -241,121 +193,7 @@
     <section class="newest-products">
         <div class="container">
             <h2>Latest Products</h2>
-            <div class="cards">
-                <div class="fixed-card">
-                    <div class="image-container">
-                        <img src="assets/fe502c91678776be52471704ed6aa26cd1d28dd8.png" alt="">
-                    </div>
-                    <div class="card-content">
-                        <span class="item-name">
-                            Comfort Handy Craft
-                        </span>
-                        <span class="price">
-                            $42.00
-                        </span>
-                    </div>
-                    <a href="#" class="cart">
-                        <i class="fas fa-shopping-cart fa-1x"></i>
-                    </a>
-                    <a href="#" class="favorite">
-                        <i class="fa-regular fa-heart"></i>
-                    </a>
-                </div>
-                <div class="fixed-card">
-                    <div class="image-container">
-                        <img src="assets/fe502c91678776be52471704ed6aa26cd1d28dd8.png" alt="">
-                    </div>
-                    <div class="card-content">
-                        <span class="item-name">
-                            Comfort Handy Craft
-                        </span>
-                        <span class="price">
-                            $42.00
-                        </span>
-                    </div>
-                    <a href="#" class="cart">
-                        <i class="fas fa-shopping-cart fa-1x"></i>
-                    </a>
-                    <a href="#" class="favorite">
-                        <i class="fa-regular fa-heart"></i>
-                    </a>
-                </div>
-                <div class="fixed-card">
-                    <div class="image-container">
-                        <img src="assets/fe502c91678776be52471704ed6aa26cd1d28dd8.png" alt="">
-                    </div>
-                    <div class="card-content">
-                        <span class="name">
-                            Comfort Handy Craft
-                        </span>
-                        <span class="price">
-                            $42.00
-                        </span>
-                    </div>
-                    <a href="#" class="cart">
-                        <i class="fas fa-shopping-cart fa-1x"></i>
-                    </a>
-                    <a href="#" class="favorite">
-                        <i class="fa-regular fa-heart"></i>
-                    </a>
-                </div>
-                <div class="fixed-card">
-                    <div class="image-container">
-                        <img src="assets/fe502c91678776be52471704ed6aa26cd1d28dd8.png" alt="">
-                    </div>
-                    <div class="card-content">
-                        <span class="item-name">
-                            Comfort Handy Craft
-                        </span>
-                        <span class="price">
-                            $42.00
-                        </span>
-                    </div>
-                    <a href="#" class="cart">
-                        <i class="fas fa-shopping-cart fa-1x"></i>
-                    </a>
-                    <a href="#" class="favorite">
-                        <i class="fa-regular fa-heart"></i>
-                    </a>
-                </div>
-                <div class="fixed-card">
-                    <div class="image-container">
-                        <img src="assets/fe502c91678776be52471704ed6aa26cd1d28dd8.png" alt="">
-                    </div>
-                    <div class="card-content">
-                        <span class="item-name">
-                            Comfort Handy Craft
-                        </span>
-                        <span class="price">
-                            $42.00
-                        </span>
-                    </div>
-                    <a href="#" class="cart">
-                        <i class="fas fa-shopping-cart fa-1x"></i>
-                    </a>
-                    <a href="#" class="favorite">
-                        <i class="fa-regular fa-heart"></i>
-                    </a>
-                </div>
-                <div class="fixed-card">
-                    <div class="image-container">
-                        <img src="assets/fe502c91678776be52471704ed6aa26cd1d28dd8.png" alt="">
-                    </div>
-                    <div class="card-content">
-                        <span class="item-name">
-                            Comfort Handy Craft
-                        </span>
-                        <span class="price">
-                            $42.00
-                        </span>
-                    </div>
-                    <a href="#" class="cart">
-                        <i class="fas fa-shopping-cart fa-1x"></i>
-                    </a>
-                    <a href="#" class="favorite">
-                        <i class="fa-regular fa-heart"></i>
-                    </a>
-                </div>
+            <div class="cards" id="latest-products">
             </div>
     </section>
 
@@ -376,22 +214,22 @@
             </div>
             <div class="categories-list">
                 <h3>Categories</h3>
-                <ul> <a href="">Sofa</a>
-                    <a href="">chair</a>
-                    <a href="">stool</a>
-                    <a href="">Table</a>
-                    <a href="">Desk</a>
-                    <a href="">Kitchen</a>
-                    <a href="">Vanitory</a>
-                    <a href="">Matress</a>
+                <ul> <a href="products.html?name=sofa">Sofa</a>
+                    <a href="products.html?name=chair">chair</a>
+                    <a href="products.html?name=stool">stool</a>
+                    <a href="products.html?name=table">Table</a>
+                    <a href="products.html?name=desk">Desk</a>
+                    <a href="products.html?name=kitchen">Kitchen</a>
+                    <a href="products.html?name=vanitory">Vanitory</a>
+                    <a href="products.html?name=matress">Matress</a>
                 </ul>
             </div>
             <div class="pages">
                 <h3>Pages</h3>
                 <ul>
-                    <a href="#">Home</a>
-                    <a href="#">Products</a>
-                    <a href="#">About</a>
+                    <a href="index.html">Home</a>
+                    <a href="products.html">Products</a>
+                    <a href="favorite.html">Favorite</a>
                     <a href="#">Contact</a>
                 </ul>
 
@@ -409,7 +247,8 @@
             </div>
         </div>
     </footer>
-    <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/script.js" type="module"></script>
 </body>
 
 </html>
