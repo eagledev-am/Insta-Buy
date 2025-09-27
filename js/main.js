@@ -24,3 +24,5 @@ searchInput.addEventListener('input', async (e) => {
 })
 
 
+
+

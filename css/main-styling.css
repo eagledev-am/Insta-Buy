@@ -626,7 +626,7 @@ section .container h2 {
     color: red;
 }
 
-.btn {
+.cart-btn {
     background: var(--color-2);
     border: none;
     padding: 10px 18px;
