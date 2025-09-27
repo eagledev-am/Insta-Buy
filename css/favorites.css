@@ -1,0 +1,19 @@
+
+.favorites-header {
+    background: linear-gradient(135deg, var(--color-1) 0%, var(--main-text-color) 100%);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.page-title {
+    font-size: var(--section-head-size);
+    margin: 0 0 10px 0;
+    font-weight: 700;
+}
+
+.page-subtitle {
+    font-size: var(--text-size);
+    margin: 0;
+    opacity: 0.9;
+}
