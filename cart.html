@@ -4,15 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Favorites - Furniture Store</title>
+    <title>Responsive Shopping Cart</title>
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-     <link rel="stylesheet" href="css/main-styling.css">   
-    <link rel="stylesheet" href="css/favorites.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="css/main-styling.css">
+    <link rel="stylesheet" href="css/cart.css">
 </head>
 
 <body>
-   <header>
+
+    <header>
         <div class="top-header">
             <div class="heading-bar">
                 <div class="contact-info">
@@ -48,13 +52,13 @@
             </div>
             <ul id="nav-links">
                 <li>
-                    <a href="/index.html" class="active">Home</a>
+                    <a href="index.html" class="active">Home</a>
                 </li>
                 <li>
-                    <a href="/products.html">products</a>
+                    <a href="products.html">products</a>
                 </li>
                 <li>
-                    <a href="/favorites.html">Favorite</a>
+                    <a href="favorites.html">Favorite</a>
                 </li>
                 <li>
                     <a href="#">About</a>
@@ -63,7 +67,7 @@
                     <a href="#">Contact</a>
                 </li>
             </ul>
-            <form action="/products.html" class="search-input" method="get" id="search-form">
+            <form action="/products.html" class="search-input">
                 <input type="text" id="search-input" name="name">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </form>
@@ -71,65 +75,55 @@
         </div>
     </header>
 
-        <section class="favorites-header">
+    
+
+    <section class="cart-header">
             <div class="container">
                 <h1 class="page-title">Favorite Products</h1>
                 <p class="page-subtitle">Products you've saved for later</p>
             </div>
         </section>
-        <section class="products-section">
-            <div class="container">
-                <div class="cards" id="favorites-cards">
-                    <div class="card">
-                        <div class="image-container">
-                            <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/24fada32-83ae-4598-9815-06fc6b891277.jpeg" alt="pr1" class="card-img">
+    <section>
+        <div class="container">
+            <div class="cart-container">
+                <!-- Left Side -->
+                <div class="cart-items">
+                    <div class="cart-item">
+                        <img src="assets/ac53427cec2feb66129667973939b2ea5191c695.png" alt="Product Image"
+                            class="cart-img">
+                        <div class="cart-details">
+                            <h2 class="cart-title">Product Name</h2>
+                            <p class="cart-price">$25.00</p>
+                            <div class="cart-quantity">
+                                <label for="qty1">Qty:</label>
+                                <input type="number" id="qty1" value="1" min="1">
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <h3 class="card-title">Modern Comfort Sofa</h3>
-                            <p class="card-subtitle">Category: Category: sofa</p>
-                            <p class="card-text">Luxurious 3-seater sofa with premium fabric upholstery, perfect for
-                                modern living rooms. Features comfortable cushions and elegant design.</p>
-                        </div>
-                        <div class="card-footer">
-                            <span class="price">$899</span>
-                            <button class="btn">Add to Cart</button>
-                        </div>
-                        <i class="fa-regular fa-heart fa-1x"></i>
+                        <button class="remove-btn">Remove</button>
                     </div>
-                    <div class="card">
-                        <div class="image-container">
-                            <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/24fada32-83ae-4598-9815-06fc6b891277.jpeg" alt="pr1" class="card-img">
+
+                    <div class="cart-item">
+                        <img src="assets/b0ab7b45906d2aaf430d5bb6b86d462a9e91a8af.png" alt="Product Image"
+                            class="cart-img">
+                        <div class="cart-details">
+                            <h2 class="cart-title">Another Product</h2>
+                            <p class="cart-price">$40.00</p>
+                            <div class="cart-quantity">
+                                <label for="qty2">Qty:</label>
+                                <input type="number" id="qty2" value="2" min="1">
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <h3 class="card-title">Modern Comfort Sofa</h3>
-                            <p class="card-subtitle">Category: Category: sofa</p>
-                            <p class="card-text">Luxurious 3-seater sofa with premium fabric upholstery, perfect for
-                                modern living rooms. Features comfortable cushions and elegant design.</p>
-                        </div>
-                        <div class="card-footer">
-                            <span class="price">$899</span>
-                            <button class="btn">Add to Cart</button>
-                        </div>
-                        <i class="fa-regular fa-heart fa-1x"></i>
-                    </div>
-                    <div class="card">
-                        <div class="image-container">
-                            <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/24fada32-83ae-4598-9815-06fc6b891277.jpeg" alt="pr1" class="card-img">
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title">Modern Comfort Sofa</h3>
-                            <p class="card-subtitle">Category: Category: sofa</p>
-                            <p class="card-text">Luxurious 3-seater sofa with premium fabric upholstery, perfect for
-                                modern living rooms. Features comfortable cushions and elegant design.</p>
-                        </div>
-                        <div class="card-footer">
-                            <span class="price">$899</span>
-                            <button class="btn">Add to Cart</button>
-                        </div>
-                        <i class="fa-regular fa-heart fa-1x"></i>
+                        <button class="remove-btn">Remove</button>
                     </div>
                 </div>
-        </section>
+                <div class="cart-summary">
+                    <h2>Summary</h2>
+                    <p>Total: <span class="cart-total">$105.00</span></p>
+                    <button class="checkout-btn">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="footer-content">
@@ -161,10 +155,10 @@
             <div class="pages">
                 <h3>Pages</h3>
                 <ul>
-                    <a href="/index.html">Home</a>
-                    <a href="/products.html">Products</a>
-                    <a href="/favorite.html">Favorite</a>
-                    <a href="/contact.html">Contact</a>
+                    <a href="index.html">Home</a>
+                    <a href="products.html">Products</a>
+                    <a href="favorite.html">Favorite</a>
+                    <a href="#">Contact</a>
                 </ul>
 
             </div>
@@ -182,7 +176,7 @@
         </div>
     </footer>
     <script src="js/main.js"></script>
-    <script type="module" src="js/favorites.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 
 </html>

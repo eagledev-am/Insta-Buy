@@ -4,6 +4,8 @@
     color: white;
     padding: 60px 0;
     text-align: center;
+    margin-top: var(--default-margin);
+    margin-bottom: var(--default-margin);
 }
 
 .page-title {
