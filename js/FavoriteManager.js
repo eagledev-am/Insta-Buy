@@ -4,29 +4,55 @@ class Favorites {
     }
 
     getAll() {
-        return JSON.parse(localStorage.getItem(this.key)) || [];
+        try {
+            const data = localStorage.getItem(this.key);
+            if (!data) return [];
+            const parsed = JSON.parse(data);
+            return Array.isArray(parsed) ? parsed : [];
+        } catch (e) {
+            localStorage.removeItem(this.key);
+            return [];
+        }
     }
 
     add(product) {
+        if (!product || !product.sku) {
+            return;
+        }
+
         const favorites = this.getAll();
         const exists = favorites.some(fav => fav.sku === product.sku);
+
         if (!exists) {
             favorites.push(product);
-            localStorage.setItem(this.key, JSON.stringify(favorites));
+            try {
+                localStorage.setItem(this.key, JSON.stringify(favorites));
+            } catch (e) {
+                console.error("Failed to save favorites:", e);
+            }
         }
     }
 
     remove(productId) {
-        let favorites = this.getAll();
-        favorites = favorites.filter(fav => fav.sku !== productId);
-        localStorage.setItem(this.key, JSON.stringify(favorites));
+        if (!productId) return;
+
+        const favorites = this.getAll();
+        const filtered = favorites.filter(fav => fav.sku !== productId);
+
+        try {
+            localStorage.setItem(this.key, JSON.stringify(filtered));
+        } catch (e) {
+            console.error("Failed to update favorites:", e);
+        }
     }
 
     toggle(product) {
-        const favorites = this.getAll();
-        const exists = favorites.some(fav => fav.sku === product.sku);
+        if (!product || !product.sku) {
+            console.log("Invalid product for toggle:", product);
+            return false;
+        }
 
-        if (exists) {
+        if (this.isFavorite(product.sku)) {
             this.remove(product.sku);
             return false; // removed
         } else {
@@ -36,8 +62,14 @@ class Favorites {
     }
 
     isFavorite(productId) {
-        
-        return this.getAll().some(fav => fav.sku === productId);
+        if (!productId) return false;
+
+        const favorites = this.getAll();
+        return favorites.some(fav => fav.sku === productId);
+    }
+
+    clear() {
+        localStorage.removeItem(this.key);
     }
 }
 

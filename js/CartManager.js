@@ -4,19 +4,36 @@ class Cart {
     }
 
     getAll() {
-        return JSON.parse(localStorage.getItem(this.key)) || [];
+       try{
+            const data = localStorage.getItem(this.key)
+            if(!data) return []
+            const parsed = JSON.parse(data)
+            return Array.isArray(parsed)? parsed : []
+       }
+       catch(e){
+            localStorage.removeItem(this.key)
+            return []
+       }
     }
 
     save(cart) {
+        try{
         localStorage.setItem(this.key, JSON.stringify(cart));
+        }catch(e){
+            console.error("Failed to update cart")
+        }
     }
 
     add(product) {
-        const cart = this.getAll();
+        if(!product || !product.sku){
+            return;
+        }
+
+        let cart = this.getAll();
         const existing = cart.find(item => item.sku === product.sku);
 
         if (existing) {
-            existing.quantity += 1; // increase qty if exists
+            existing.quantity += 1;
         } else {
             cart.push({ ...product, quantity: 1 });
         }
@@ -25,13 +42,16 @@ class Cart {
     }
 
     remove(productId) {
+        if(!productId) return
         let cart = this.getAll();
         cart = cart.filter(item => item.sku !== productId);
         this.save(cart);
     }
 
     decrement(productId) {
-        const cart = this.getAll();
+        if(!productId) return 
+
+        let cart = this.getAll();
         const item = cart.find(i => i.sku === productId);
 
         if (item) {
@@ -49,16 +69,17 @@ class Cart {
     }
 
     isInCart(productId) {
+        if(!productId) return false
         return this.getAll().some(item => item.sku === productId);
     }
 
     toggle(product) {
         if (this.isInCart(product.sku)) {
             this.remove(product.sku);
-            return false; // removed
+            return false; 
         } else {
             this.add(product);
-            return true; // added
+            return true; 
         }
     }
 }

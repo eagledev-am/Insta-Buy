@@ -7,8 +7,7 @@ document.getElementById('favorites-cards').addEventListener('click', (e) => {
     console.log("action");
 
     const icon = e.target.closest('.favorite-icon');
-    if (!icon) return; // clicked something else
-
+    if (!icon) return; 
     const productId = icon.dataset.productId;
     favoritesManager.remove(productId);
 

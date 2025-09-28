@@ -2,8 +2,6 @@ import { cartManager } from "./CartManager.js";
 import { favoritesManager } from "./FavoriteManager.js";
 
 export function updateFavoriteIcon(icon, isFav) {
-    console.log(icon.dataset.productId)
-    console.log("isFav " , isFav)
     if (isFav) {
         icon.classList.remove("fa-regular");
         icon.classList.add("fa-solid");
@@ -13,140 +11,122 @@ export function updateFavoriteIcon(icon, isFav) {
         icon.classList.add("fa-regular");
         icon.style.color = "";
     }
-    console.log(icon.classList)
 }
 
 export function updateCartIcon(icon, inCart) {
-    console.log(icon.dataset.productId);
-    console.log("inCart:", inCart);
-
-    if (inCart) {
-        icon.classList.remove("fa-shopping-cart"); 
-        icon.classList.add("fa-cart-plus"); 
-        icon.style.color = "green";
-    } else {
-        icon.classList.remove("fa-cart-plus"); 
-        icon.classList.add("fa-shopping-cart"); 
-        icon.style.color = "";
+    if (icon.classList.contains("cart-icon")) {
+        if (inCart) {
+            icon.classList.remove("fa-shopping-cart");
+            icon.classList.add("fa-cart-plus");
+            icon.style.color = "green";
+        } else {
+            icon.classList.remove("fa-cart-plus");
+            icon.classList.add("fa-shopping-cart");
+            icon.style.color = "";
+        }
     }
-
-    console.log(icon.classList);
 }
-
 
 export function createCard(product, card_class='card') {
     const productCard = document.createElement("div");
     productCard.className = card_class;
     productCard.dataset.id = product.sku;
-    productCard.innerHTML = card_class === 'fixed-card'?`
-            <div class="image-container">
-                <img src="${product.image_path}" alt="${product.name}" class="card-img">
-            </div>
-            <div class="card-content">
-                <span class="item-name">${product.name}</span>
-                <span class="price">$${product.price}</span>
-            </div>
-            <a href="#" class="cart" id="cart-icon">
-                <i class="fas fa-shopping-cart cart-icon fa-1x" data-product-id="${product.sku}"></i>
-            </a>
-            <a href="#" class="favorite">
-                <i class="fa-regular fa-heart fa-1x favorite-icon" data-product-id="${product.sku}"></i>
-            </a>
-        ` :  `
-            <div class="image-container">
-                <img src="${product.image_path}" alt="${product.name}" class="card-img" data-img>
-            </div>
-            <div class="card-body">
-                <h3 class="card-title">${product.name}</h3>
-                <p class="card-subtitle">Category: ${product.category}</p>
-                <p class="card-text">${product.description}</p>
-            </div>
-            <div class="card-footer">
-                    <span class="price">$${product.price}</span>        
-                    <button class="cart-btn" id="cart-btn" data-product-id="${product.sku}">Add to Cart</button>
-            </div>
-            <a href="#" class="favorite">
-                <i class="fa-regular fa-heart fa-1x favorite-icon" data-product-id="${product.sku}"></i>
-            </a>
-        `;
-    return productCard;    
-
+    productCard.innerHTML = card_class === 'fixed-card' ? `
+        <div class="image-container">
+            <img src="${product.image_path}" alt="${product.name}" class="card-img">
+        </div>
+        <div class="card-content">
+            <span class="item-name">${product.name}</span>
+            <span class="price">$${product.price}</span>
+        </div>
+        <a href="#" class="cart" >
+            <i class="fas cart-icon ${cartManager.isInCart(product.sku) ? "fa-cart-plus" : "fa-shopping-cart"} fa-1x" data-product-id="${product.sku}" style="color:${cartManager.isInCart(product.sku) ? "green" : ""}"></i>
+        </a>
+        <a href="#" class="favorite" >
+            <i class="${favoritesManager.isFavorite(product.sku) ? "fas" : "far"} favorite-icon fa-heart fa-1x" data-product-id="${product.sku}" style="color:${favoritesManager.isFavorite(product.sku) ? "red" : ""}"></i>
+        </a>
+    ` : `
+        <div class="image-container">
+            <img src="${product.image_path}" alt="${product.name}" class="card-img" data-img>
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">${product.name}</h3>
+            <p class="card-subtitle">Category: ${product.category}</p>
+            <p class="card-text">${product.description}</p>
+        </div>
+        <div class="card-footer">
+            <span class="price">$${product.price}</span>
+            <button class="cart-btn" data-product-id="${product.sku}">${cartManager.isInCart(product.sku) ? "Remove from Cart" : "Add to Cart"}</button>
+        </div>
+        <a href="#" class="favorite">
+            <i class="${favoritesManager.isFavorite(product.sku) ? "fas" : "far"} favorite-icon fa-heart fa-1x" data-product-id="${product.sku}" style="color:${favoritesManager.isFavorite(product.sku) ? "red" : ""}"></i>
+        </a>
+    `;
+    return productCard;
 }
 
-export function displayProducts(container,products,card_class='card') {
-    const cards = document.getElementById(container);
-    cards.innerHTML = "";
-    products.forEach(product => {
-        const productCard = createCard(product,card_class)
-        cards.appendChild(productCard);
+
+function setupCardEventListeners(card, product) {
+    const favIcon = card.querySelector(".favorite-icon");
+    favIcon.addEventListener("click", e => {
+        e.preventDefault();
+        const isFav = favoritesManager.toggle(product);
+        updateFavoriteIcon(favIcon, isFav);
+        showFeedback(isFav ? "Added to favorites" : "Removed from favorites");
     });
 
-    document.querySelectorAll(".favorite-icon").forEach(icon => {
-        const productId = icon.dataset.productId;
-        const product = products.find(p => p.sku == productId);
-
-        updateFavoriteIcon(icon, favoritesManager.isFavorite(productId));
-
-        icon.addEventListener("click", e => {
-            console.log(product)
-            console.log("event on icon")
-            e.preventDefault();
-            const isFav = favoritesManager.toggle(product);
-            updateFavoriteIcon(icon, isFav);
-            console.log("update icon state")
-        });
-    });
-}
-
-export function loadCards(cards, products, card_class) {
-    products.forEach(product => {
-        const productCard = createCard(product, card_class);
-        cards.appendChild(productCard);
-    });
-
-    document.querySelectorAll(".cart-icon, .cart-btn").forEach(cartEl => {
-        const productId = cartEl.dataset.productId;
-        const product = products.find(p => p.sku == productId);
-
-        updateCartIcon(cartEl, cartManager.isInCart(productId));
-
-        cartEl.addEventListener("click", e => {
-            console.log(product);
-            console.log("event on cart element");
+    const cartIcon = card.querySelector(".cart-icon");
+    if (cartIcon) {
+        cartIcon.addEventListener("click", e => {
             e.preventDefault();
             const inCart = cartManager.toggle(product);
-            updateCartIcon(cartEl, inCart);
-
-            if (cartEl.classList.contains("cart-btn")) {
-                cartEl.textContent = inCart ? "Remove from Cart" : "Add to Cart";
-            }
-
-            console.log("update cart state");
+            updateCartIcon(cartIcon, inCart);
+            showFeedback(inCart ? "Added to cart" : "Removed from cart");
         });
-    });
+    }
 
-    document.querySelectorAll(".favorite-icon").forEach(icon => {
-        const productId = icon.dataset.productId;
-        const product = products.find(p => p.sku == productId);
-
-        updateFavoriteIcon(icon, favoritesManager.isFavorite(productId));
-
-        icon.addEventListener("click", e => {
-            console.log(product);
-            console.log("event on favorite icon");
+    const cartBtn = card.querySelector(".cart-btn");
+    if (cartBtn) {
+        cartBtn.addEventListener("click", e => {
             e.preventDefault();
-            const isFav = favoritesManager.toggle(product);
-            updateFavoriteIcon(icon, isFav);
-            console.log("update favorite icon state");
+            const inCart = cartManager.toggle(product);
+            cartBtn.textContent = inCart ? "Remove from Cart" : "Add to Cart";
+            showFeedback(inCart ? "Added to cart" : "Removed from cart");
         });
-    });
+    }
 }
 
+export function displayProducts(containerId, products, card_class='card') {
+    const container = document.getElementById(containerId);
+    container.innerHTML = "";
+    loadCards(container,products,card_class)
+}
 
-
+export function loadCards(container, products, card_class) {
+    products.forEach(product => {
+        const card = createCard(product, card_class);
+        container.appendChild(card);
+        setupCardEventListeners(card, product);
+    });
+}
 
 export function displayFavorites() {
     const favorites = favoritesManager.getAll();
-    console.log('favorites : ' , favorites)
-    displayProducts('favorites-cards',favorites);
+    displayProducts('favorites-cards', favorites);
+}
+
+function showFeedback(message) {
+    const notif = document.createElement('div');
+    notif.textContent = message;
+    notif.style.cssText = `
+        position: fixed; bottom: 30px; right: 24px; background: var(--color-2); color: white;
+        padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 15px; z-index: 9999;
+        opacity: 0; transition: opacity 0.3s; pointer-events: none;
+    `;
+    document.body.appendChild(notif);
+    setTimeout(() => notif.style.opacity = "1", 50);
+    setTimeout(() => {
+        notif.style.opacity = "0";
+        setTimeout(() => notif.remove(), 300);
+    }, 1800);
 }
