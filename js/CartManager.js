@@ -4,28 +4,28 @@ class Cart {
     }
 
     getAll() {
-       try{
+        try {
             const data = localStorage.getItem(this.key)
-            if(!data) return []
+            if (!data) return []
             const parsed = JSON.parse(data)
-            return Array.isArray(parsed)? parsed : []
-       }
-       catch(e){
+            return Array.isArray(parsed) ? parsed : []
+        }
+        catch (e) {
             localStorage.removeItem(this.key)
             return []
-       }
+        }
     }
 
     save(cart) {
-        try{
-        localStorage.setItem(this.key, JSON.stringify(cart));
-        }catch(e){
+        try {
+            localStorage.setItem(this.key, JSON.stringify(cart));
+        } catch (e) {
             console.error("Failed to update cart")
         }
     }
 
     add(product) {
-        if(!product || !product.sku){
+        if (!product || !product.sku) {
             return;
         }
 
@@ -42,14 +42,14 @@ class Cart {
     }
 
     remove(productId) {
-        if(!productId) return
+        if (!productId) return
         let cart = this.getAll();
         cart = cart.filter(item => item.sku !== productId);
         this.save(cart);
     }
 
     decrement(productId) {
-        if(!productId) return 
+        if (!productId) return
 
         let cart = this.getAll();
         const item = cart.find(i => i.sku === productId);
@@ -64,22 +64,34 @@ class Cart {
         }
     }
 
+    increment(productId) {
+        if (!productId) return
+
+        let cart = this.getAll();
+        const item = cart.find(i => i.sku === productId);
+
+        if (item) {
+            item.quantity += 1
+            this.add(item)
+        }
+    }
+
     clear() {
         this.save([]);
     }
 
     isInCart(productId) {
-        if(!productId) return false
+        if (!productId) return false
         return this.getAll().some(item => item.sku === productId);
     }
 
     toggle(product) {
         if (this.isInCart(product.sku)) {
             this.remove(product.sku);
-            return false; 
+            return false;
         } else {
             this.add(product);
-            return true; 
+            return true;
         }
     }
 }

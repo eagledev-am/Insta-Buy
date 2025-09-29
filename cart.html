@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Shopping Cart</title>
+    <title>Cart</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
@@ -35,11 +35,11 @@
                         <i class="fa-regular fa-user"></i>
                     </span>
                     <span>
-                        <a href="#">wishlist</a>
+                        <a href="favorites.html">wishlist</a>
                         <i class="fa-regular fa-heart"></i>
                     </span>
                     <span>
-                        <a href="#">
+                        <a href="cart.html">
                             <i class="fas fa-shopping-cart"></i>
                         </a>
                     </span>
@@ -61,10 +61,7 @@
                     <a href="favorites.html">Favorite</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
+                    <a href="cart.html">Cart</a>
                 </li>
             </ul>
             <form action="/products.html" class="search-input">
@@ -75,54 +72,77 @@
         </div>
     </header>
 
-    
+
 
     <section class="cart-header">
-            <div class="container">
-                <h1 class="page-title">Favorite Products</h1>
-                <p class="page-subtitle">Products you've saved for later</p>
-            </div>
-        </section>
+        <div class="container">
+            <h1 class="page-title">Cart</h1>
+        </div>
+    </section>
     <section>
         <div class="container">
-            <div class="cart-container">
-                <!-- Left Side -->
-                <div class="cart-items">
+            <div class="cart-content">
+                <div id="cart-items">
                     <div class="cart-item">
-                        <img src="assets/ac53427cec2feb66129667973939b2ea5191c695.png" alt="Product Image"
-                            class="cart-img">
-                        <div class="cart-details">
-                            <h2 class="cart-title">Product Name</h2>
-                            <p class="cart-price">$25.00</p>
-                            <div class="cart-quantity">
-                                <label for="qty1">Qty:</label>
-                                <input type="number" id="qty1" value="1" min="1">
-                            </div>
+                        <div class="item-image">
+                            <img src="assets/b0ab7b45906d2aaf430d5bb6b86d462a9e91a8af.png" alt="" srcset="">
                         </div>
-                        <button class="remove-btn">Remove</button>
+                        <div class="item-details">
+                            <div class="item-name">Smartphone Pro</div>
+                            <div class="item-category">phone</div>
+                            <div class="item-price">$899.99 each</div>
+                        </div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn">-</button>
+                            <span class="quantity">1</span>
+                            <button class="quantity-btn">+</button>
+                        </div>
+                        <div class="item-total">$899.99</div>
+                        <a class="remove-btn"><i class="fa-solid fa-trash"></i>
+                        </a>
                     </div>
-
                     <div class="cart-item">
-                        <img src="assets/b0ab7b45906d2aaf430d5bb6b86d462a9e91a8af.png" alt="Product Image"
-                            class="cart-img">
-                        <div class="cart-details">
-                            <h2 class="cart-title">Another Product</h2>
-                            <p class="cart-price">$40.00</p>
-                            <div class="cart-quantity">
-                                <label for="qty2">Qty:</label>
-                                <input type="number" id="qty2" value="2" min="1">
-                            </div>
+                        <div class="item-image">
+                            <img src="assets/b0ab7b45906d2aaf430d5bb6b86d462a9e91a8af.png" alt="" srcset="">
                         </div>
-                        <button class="remove-btn">Remove</button>
+                        <div class="item-details">
+                            <div class="item-name">Smartphone Pro</div>
+                            <div class="item-category">phone</div>
+                            <div class="item-price">$899.99 each</div>
+                        </div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn">-</button>
+                            <span class="quantity">1</span>
+                            <button class="quantity-btn">+</button>
+                        </div>
+                        <div class="item-total">$899.99</div>
+                        <a class="remove-btn"><i class="fa-solid fa-trash"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="cart-summary">
-                    <h2>Summary</h2>
-                    <p>Total: <span class="cart-total">$105.00</span></p>
-                    <button class="checkout-btn">Checkout</button>
+                    <div class="summary-row">
+                        <span class="summary-label">Subtotal:</span>
+                        <span class="summary-value" id="subtotal">$2,599.96</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Shipping:</span>
+                        <span class="summary-value">$15.99</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Tax:</span>
+                        <span class="summary-value" id="tax">$208.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Total:</span>
+                        <span class="summary-value" id="total">$2,823.95</span>
+                    </div>
+                    <button class="checkout-btn">Proceed to Checkout</button>
                 </div>
             </div>
         </div>
+        </div>
+
     </section>
 
     <footer>
@@ -157,8 +177,8 @@
                 <ul>
                     <a href="index.html">Home</a>
                     <a href="products.html">Products</a>
-                    <a href="favorite.html">Favorite</a>
-                    <a href="#">Contact</a>
+                    <a href="favorites.html">Favorite</a>
+                    <a href="cart.html">Cart</a>
                 </ul>
 
             </div>
@@ -176,7 +196,7 @@
         </div>
     </footer>
     <script src="js/main.js"></script>
-    <script src="js/cart.js"></script>
+    <script src="js/cart.js" type="module"></script>
 </body>
 
 </html>

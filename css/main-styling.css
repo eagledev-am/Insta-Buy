@@ -362,8 +362,8 @@ footer {
 }
 
 .footer-content button:hover {
-    background-color: #5a1fa8;
-    border-color: #5a1fa8;
+    background-color: var(--main-text-color);
+    border-color: var(--main-text-color);
 }
 
 .categories-list,

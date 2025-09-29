@@ -7,12 +7,12 @@
     <title>My Favorites - Furniture Store</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-     <link rel="stylesheet" href="css/main-styling.css">   
+    <link rel="stylesheet" href="css/main-styling.css">
     <link rel="stylesheet" href="css/favorites.css">
 </head>
 
 <body>
-   <header>
+    <header>
         <div class="top-header">
             <div class="heading-bar">
                 <div class="contact-info">
@@ -31,11 +31,11 @@
                         <i class="fa-regular fa-user"></i>
                     </span>
                     <span>
-                        <a href="#">wishlist</a>
+                        <a href="favorites.html">wishlist</a>
                         <i class="fa-regular fa-heart"></i>
                     </span>
                     <span>
-                        <a href="#">
+                        <a href="cart.html">
                             <i class="fas fa-shopping-cart"></i>
                         </a>
                     </span>
@@ -48,19 +48,16 @@
             </div>
             <ul id="nav-links">
                 <li>
-                    <a href="/index.html" class="active">Home</a>
+                    <a href="index.html" class="active">Home</a>
                 </li>
                 <li>
-                    <a href="/products.html">products</a>
+                    <a href="products.html">products</a>
                 </li>
                 <li>
-                    <a href="/favorites.html">Favorite</a>
+                    <a href="favorites.html">Favorite</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
+                    <a href="cart.html">Cart</a>
                 </li>
             </ul>
             <form action="/products.html" class="search-input" method="get" id="search-form">
@@ -71,65 +68,68 @@
         </div>
     </header>
 
-        <section class="favorites-header">
-            <div class="container">
-                <h1 class="page-title">Favorite Products</h1>
-                <p class="page-subtitle">Products you've saved for later</p>
-            </div>
-        </section>
-        <section class="products-section">
-            <div class="container">
-                <div class="cards" id="favorites-cards">
-                    <div class="card">
-                        <div class="image-container">
-                            <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/24fada32-83ae-4598-9815-06fc6b891277.jpeg" alt="pr1" class="card-img">
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title">Modern Comfort Sofa</h3>
-                            <p class="card-subtitle">Category: Category: sofa</p>
-                            <p class="card-text">Luxurious 3-seater sofa with premium fabric upholstery, perfect for
-                                modern living rooms. Features comfortable cushions and elegant design.</p>
-                        </div>
-                        <div class="card-footer">
-                            <span class="price">$899</span>
-                            <button class="btn">Add to Cart</button>
-                        </div>
-                        <i class="fa-regular fa-heart fa-1x"></i>
+    <section class="favorites-header">
+        <div class="container">
+            <h1 class="page-title">Favorite Products</h1>
+            <p class="page-subtitle">Products you've saved for later</p>
+        </div>
+    </section>
+    <section class="products-section">
+        <div class="container">
+            <div class="cards" id="favorites-cards">
+                <div class="card">
+                    <div class="image-container">
+                        <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/24fada32-83ae-4598-9815-06fc6b891277.jpeg"
+                            alt="pr1" class="card-img">
                     </div>
-                    <div class="card">
-                        <div class="image-container">
-                            <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/24fada32-83ae-4598-9815-06fc6b891277.jpeg" alt="pr1" class="card-img">
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title">Modern Comfort Sofa</h3>
-                            <p class="card-subtitle">Category: Category: sofa</p>
-                            <p class="card-text">Luxurious 3-seater sofa with premium fabric upholstery, perfect for
-                                modern living rooms. Features comfortable cushions and elegant design.</p>
-                        </div>
-                        <div class="card-footer">
-                            <span class="price">$899</span>
-                            <button class="btn">Add to Cart</button>
-                        </div>
-                        <i class="fa-regular fa-heart fa-1x"></i>
+                    <div class="card-body">
+                        <h3 class="card-title">Modern Comfort Sofa</h3>
+                        <p class="card-subtitle">Category: Category: sofa</p>
+                        <p class="card-text">Luxurious 3-seater sofa with premium fabric upholstery, perfect for
+                            modern living rooms. Features comfortable cushions and elegant design.</p>
                     </div>
-                    <div class="card">
-                        <div class="image-container">
-                            <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/24fada32-83ae-4598-9815-06fc6b891277.jpeg" alt="pr1" class="card-img">
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title">Modern Comfort Sofa</h3>
-                            <p class="card-subtitle">Category: Category: sofa</p>
-                            <p class="card-text">Luxurious 3-seater sofa with premium fabric upholstery, perfect for
-                                modern living rooms. Features comfortable cushions and elegant design.</p>
-                        </div>
-                        <div class="card-footer">
-                            <span class="price">$899</span>
-                            <button class="btn">Add to Cart</button>
-                        </div>
-                        <i class="fa-regular fa-heart fa-1x"></i>
+                    <div class="card-footer">
+                        <span class="price">$899</span>
+                        <button class="btn">Add to Cart</button>
                     </div>
+                    <i class="fa-regular fa-heart fa-1x"></i>
                 </div>
-        </section>
+                <div class="card">
+                    <div class="image-container">
+                        <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/24fada32-83ae-4598-9815-06fc6b891277.jpeg"
+                            alt="pr1" class="card-img">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Modern Comfort Sofa</h3>
+                        <p class="card-subtitle">Category: Category: sofa</p>
+                        <p class="card-text">Luxurious 3-seater sofa with premium fabric upholstery, perfect for
+                            modern living rooms. Features comfortable cushions and elegant design.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="price">$899</span>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                    <i class="fa-regular fa-heart fa-1x"></i>
+                </div>
+                <div class="card">
+                    <div class="image-container">
+                        <img src="https://wvxxlssoccbctxspmtyy.supabase.co/storage/v1/object/public/products/public/24fada32-83ae-4598-9815-06fc6b891277.jpeg"
+                            alt="pr1" class="card-img">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Modern Comfort Sofa</h3>
+                        <p class="card-subtitle">Category: Category: sofa</p>
+                        <p class="card-text">Luxurious 3-seater sofa with premium fabric upholstery, perfect for
+                            modern living rooms. Features comfortable cushions and elegant design.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="price">$899</span>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                    <i class="fa-regular fa-heart fa-1x"></i>
+                </div>
+            </div>
+    </section>
 
     <footer>
         <div class="footer-content">
@@ -161,10 +161,10 @@
             <div class="pages">
                 <h3>Pages</h3>
                 <ul>
-                    <a href="/index.html">Home</a>
-                    <a href="/products.html">Products</a>
-                    <a href="/favorite.html">Favorite</a>
-                    <a href="/contact.html">Contact</a>
+                    <a href="index.html">Home</a>
+                    <a href="products.html">Products</a>
+                    <a href="favorites.html">Favorite</a>
+                    <a href="cart.html">Cart</a>
                 </ul>
 
             </div>

@@ -1,4 +1,4 @@
-import { cartManager } from "./CartManager.js";
+import { cartManager } from "./cartManager.js";
 import { favoritesManager } from "./FavoriteManager.js";
 
 export function updateFavoriteIcon(icon, isFav) {
@@ -99,6 +99,9 @@ function setupCardEventListeners(card, product) {
 export function displayProducts(containerId, products, card_class='card') {
     const container = document.getElementById(containerId);
     container.innerHTML = "";
+    if(products.length == 0){
+        innerHTML='<div style="text-align:center; padding: 40px 0; color:#aaa;">Your cart is empty.</div>';
+    }
     loadCards(container,products,card_class)
 }
 
