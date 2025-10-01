@@ -116,10 +116,11 @@ header {
 .logo {
     font-family: Lato;
     color: #0D0E43;
-    font-size: 25px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 700;
     text-transform: uppercase;
+    font-style: italic;
 }
 
 .nav ul {
@@ -226,6 +227,7 @@ header:hover {
         margin-top: 10px;
         max-height: 500px;
         opacity: 1;
+        
     }
 
     .nav .search-input {
@@ -252,8 +254,16 @@ header:hover {
         margin-left: auto;
         margin-right: auto;
     }
+
 }
 
+@media (max-width: 480px) {
+    .nav .search-input {
+        flex-basis: 100%;
+        order: 4;
+        margin: 20px auto;
+    }
+}
 
 
 section {
@@ -618,7 +628,7 @@ section .container h2 {
     visibility: hidden;
 }
 
-.card:hover i{
+.card:hover i {
     visibility: visible;
 }
 
@@ -666,4 +676,3 @@ section .container h2 {
         flex-basis: 30%;
     }
 }
-

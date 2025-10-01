@@ -19,16 +19,17 @@
     }
 
     @media (max-width: 480px) {
-        body {
-            margin: 1rem;
-        }
-
         .cart-heading {
             font-size: 2rem;
         }
 
         .cart-title {
             font-size: 1.2rem;
+        }
+
+        .checkout-btn{
+            font-weight: 600;
+            margin-top: 20px;
         }
     }
 
