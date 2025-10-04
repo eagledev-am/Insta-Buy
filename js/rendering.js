@@ -1,4 +1,4 @@
-import { cartManager } from "./cartManager.js";
+import { cartManager } from "./CartManager.js";
 import { favoritesManager } from "./FavoriteManager.js";
 
 export function updateFavoriteIcon(icon, isFav) {

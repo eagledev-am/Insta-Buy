@@ -1,4 +1,4 @@
-import { cartManager } from './cartManager.js';
+import { cartManager } from './CartManager.js';
 
 const SHIPPING = 15.99;
 const TAX_RATE = 0.08; 
@@ -7,7 +7,7 @@ function formatMoney(amount) {
     return `$${amount.toFixed(2)}`;
 }
 
-function renderCart() {
+export function renderCart() {
     const cartItems = cartManager.getAll();
     const cartList = document.getElementById('cart-items');
     cartList.innerHTML = '';
@@ -62,10 +62,7 @@ function renderCart() {
     document.getElementById('subtotal').textContent = formatMoney(subtotal);
     document.getElementById('tax').textContent = formatMoney(tax);
     document.getElementById('total').textContent = formatMoney(total);
-}
-
-window.checkout = function() {
-    alert("Proceeding to checkout (demo)");
+    document.getElementById('checkout-btn').disabled = cartItems.length === 0;
 }
 
 document.addEventListener('DOMContentLoaded', renderCart);

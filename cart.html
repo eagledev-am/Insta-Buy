@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="css/main-styling.css">
     <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/checkout.css">
 </head>
 
 <body>
@@ -133,14 +134,12 @@
                         <span class="summary-label">Total:</span>
                         <span class="summary-value" id="total">$2,823.95</span>
                     </div>
-                    <button class="checkout-btn">Proceed to Checkout</button>
+                    <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
                 </div>
             </div>
         </div>
-        </div>
-
     </section>
-
+    <div class="overlay" id="overlay" onclick="closePopup(event)"></div>    
     <footer>
         <div class="footer-content">
             <div class="left-cont">
@@ -192,7 +191,7 @@
         </div>
     </footer>
     <script src="js/main.js"></script>
+    <script src="js/checkout.js" type="module"></script>
     <script src="js/cart.js" type="module"></script>
 </body>
-
 </html>
